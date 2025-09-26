@@ -13,9 +13,9 @@ export const Navbar = () => {
         <div className='container'>
             <div className='row flex justify-between items-center'>
                 {/* ------- logo ----- */}
-                <div className='logo'>
+                <Link className='logo'>
                     <img src={logo} alt="logo" />
-                </div>
+                </Link>
                 {/* --------- menu items ----- */}
                 <div className='menuItems'>
                     <ul className='flex items-center gap-[25px]'>

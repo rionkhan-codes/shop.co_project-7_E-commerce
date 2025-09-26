@@ -1,3 +1,31 @@
 /* --------- font links -------- */
 @import url('https://fonts.googleapis.com/css2?family=Adamina&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Akatab:wght@400;500;600;700;800;900&display=swap');
+
+
+
+
+/* --------- custom css --------- */
+
+
+/* --------- new arrivals --------- */
+.main{
+    transition: all linear .4s;
+}
+.main:hover{
+    background: #234C6A;
+    color: #fff;
+
+}
+
+/* ----- update --------- */
+
+
+/* ------ footernav ------ */
+.main3{
+    transition: all linear .4s;
+}
+.main3:hover{
+    color: white;
+    background: black;
+}
