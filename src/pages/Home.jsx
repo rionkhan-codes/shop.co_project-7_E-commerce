@@ -5,6 +5,7 @@ import { NewArrival } from '../components/NewArrival'
 import { TopSelling } from '../components/TopSelling'
 import { Update } from '../components/Update'
 import { FooterNav } from '../components/FooterNav'
+import { Browse } from '../components/Browse'
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
     <Brands/>
     <NewArrival/>
     <TopSelling/>
+    <Browse/>
     <Update/>
     <FooterNav/>
     </>

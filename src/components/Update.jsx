@@ -3,7 +3,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 export const Update = () => {
   return (
-    <section id='update'>
+    <section id='update' className='mt-[80px]'>
         <div className='container'>
             <div className='row'>
                 <div className='main2 bg-black py-[43px] rounded-[21px] px-[65px] flex justify-between'>

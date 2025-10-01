@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SinglenewArrival = ({proimg,proname,proprice,prodis,prorate}) => {
+export const SingleTopsell = ({proimg,proname,proprice,prodis,prorate}) => {
   return (
     <>
     <div className='container'>
