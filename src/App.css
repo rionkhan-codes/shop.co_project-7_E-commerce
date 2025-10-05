@@ -29,3 +29,11 @@
     color: white;
     background: black;
 }
+/* ----------- product detail page  --------------- */
+/* -------comp1 -------- */
+.icon1{
+    transition: all linear .4s;
+}
+.icon1:hover{
+    transform: scale(1.1);
+}
