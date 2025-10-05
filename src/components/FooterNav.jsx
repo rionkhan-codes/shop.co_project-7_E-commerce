@@ -13,7 +13,7 @@ import badge5 from '../assets/images/Badge (4).png'
 export const FooterNav = () => {
   return (
     <>
-    <footer id='footerNav' className='pt-[140px] pb-[83px] bg-[#F0F0F0]'>
+    <footer id='footerNav' className='pt-[140px] pb-[83px] bg-[#F0F0F0] '>
         <div className='container'>
             <div className='row flex justify-between'>
                 <div>
