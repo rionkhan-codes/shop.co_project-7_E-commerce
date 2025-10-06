@@ -60,16 +60,16 @@ export const FooterNav = () => {
                 </div>
             </div>
             {/* ----------- border ---------- */}
-            <div className='border w-full  border-[#00000040] mt-[50px] mb-[25px]'></div>
+            <div className='border w-full  border-[#00000040] lg:mt-[50px] lg:mb-[25px] my-[15px]'></div>
             {/* ------- row 2 ------- */}
             <div className='row flex justify-between'>
-                <h2 className='font-adamina font-normal text-[15px] text-[#00000070]'>Shop.co © 2000-2023, All Rights Reserved</h2>
-                <div className='flex gap-[13px]'>
-                    <Link><img src={badge1} alt="badge" /></Link>
-                    <Link><img src={badge2} alt="badge" /></Link>
-                    <Link><img src={badge3} alt="badge" /></Link>
-                    <Link><img src={badge4} alt="badge" /></Link>
-                    <Link><img src={badge5} alt="badge" /></Link>
+                <h2 className='font-adamina font-normal lg:text-[15px] text-[10px] text-[#00000070]'>Shop.co © 2000-2023, All Rights Reserved</h2>
+                <div className='flex lg:gap-[13px] gap-[5px] max-sm:flex-wrap'>
+                    <Link className='max-sm:w-[30px]'><img src={badge1} alt="badge" /></Link>
+                    <Link className='max-sm:w-[30px]'><img src={badge2} alt="badge" /></Link>
+                    <Link className='max-sm:w-[30px]'><img src={badge3} alt="badge" /></Link>
+                    <Link className='max-sm:w-[30px]'><img src={badge4} alt="badge" /></Link>
+                    <Link className='max-sm:w-[30px]'><img src={badge5} alt="badge" /></Link>
                 </div>
             </div>
         </div>

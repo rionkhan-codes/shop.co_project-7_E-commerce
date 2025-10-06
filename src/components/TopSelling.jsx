@@ -2,7 +2,7 @@ import React from 'react'
 import { CommonHead } from '../common/CommonHead'
 import { SingleTopsell } from '../common/SingleTopsell'
 import { Link } from 'react-router'
-
+import product from '../assets/images/product.png'
 export const TopSelling = () => {
   return (
     <section id='topsell'>
