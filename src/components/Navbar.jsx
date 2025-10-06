@@ -9,7 +9,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 export const Navbar = () => {
   return (
     <>
-    <nav id='mainNav' className='py-[25px] border-b border-[#0000001f]'>
+    <nav id='mainNav' className='py-[25px] border-b border-[#0000001f] hidden lg:block'>
         <div className='container'>
             <div className='row flex justify-between items-center'>
                 {/* ------- logo ----- */}

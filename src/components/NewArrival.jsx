@@ -6,11 +6,11 @@ import product from '../assets/images/product.png'
 export const NewArrival = () => {
   return (
     <>
-    <section id='newArrival' className='pt-[73px] py-[65px]'>
+    <section id='newArrival' className='pt-[15px] lg:pt-[73px] py-[15px] lg:py-[65px]'>
         <div className='container'>
             {/*  ----------- row 1 ---------- */}
             <div className='row'>
-                <div className='mb-[55px]'>
+                <div className='mb-[15px] lg:mb-[55px]'>
                     <CommonHead head={'NEW ARRIVALS'}/>
                 </div>
             </div>
@@ -23,11 +23,11 @@ export const NewArrival = () => {
             </div>
             {/* --------- row 3 button -------- */}
             <div className='flex justify-center'>
-                <Link className='main px-[80px] py-[15px] border border-[#00000030] rounded-[63px] font-adamina font-medium text-[16px] text-black mt-[37px]'>View All</Link>
+                <Link className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[15px] lg:mt-[37px]'>View All</Link>
             </div>
 
             {/* --- border --------- */}
-            <div className='border w-full border-[#00000030] mt-[64px]'></div>
+            <div className='border  w-full border-[#00000030] lg:mt-[64px] mt-[21px]'></div>
         </div>
     </section>
     </>

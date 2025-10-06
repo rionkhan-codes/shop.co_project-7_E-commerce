@@ -92,6 +92,8 @@ const [selectedColor, setSelectedColor] = useState(1);
             </div>
         </div>
     </section>
+
+    
     </>
   )
 }

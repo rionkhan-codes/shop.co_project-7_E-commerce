@@ -8,16 +8,16 @@ import CountUp from "react-countup";
 export const Banner = () => {
   return (
     <>
-    <section id='banner' style={{background:`url(${banner})`,backgroundPosition:'center',backgroundRepeat:'no-repeat',backgroundSize:'cover'}} className='pt-[93px] pb-[116px]'>
+    <section id='banner' style={{background:`url(${banner})`,backgroundPosition:'center',backgroundRepeat:'no-repeat',backgroundSize:'cover'}} className='lg:pt-[93px] py-[15px] lg:pb-[116px]'>
         <div className='container'>
             <div className='row'>
                 <div>
-                    <h1 className='font-adamina font-normal text-[64px] text-black w-[577px] mb-[23px]'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
-                    <p className='font-akatab text-[17px] text-[#00000070] font-normal w-[545px]'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-                    <Link className='py-[15px] px-[67px] bg-black mt-[21px] font-medium font-adamina text-[16px] text-white inline-block rounded-[63px]'>Shop Now</Link>
+                    <h1 className='font-adamina font-normal w-full text-[15px] lg:text-[64px] text-black lg:w-[577px] mb-[10px] lg:mb-[23px]'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+                    <p className='font-akatab text-[11px] lg:text-[17px] text-[#00000070] font-normal w-full lg:w-[545px]'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+                    <Link className='lg:py-[15px] py-[8px] px-[16px] lg:px-[67px] bg-black mt-[11px] lg:mt-[21px] font-medium font-adamina lg:text-[16px] text-[10px] text-white inline-block rounded-[63px]'>Shop Now</Link>
                     {/* --------- counter up ----------- */}
-                    <div className='flex items-center gap-[33px] mt-[49px]'>
-                        <div className='font-bold text-black text-[40px] font-adamina'>
+                    <div className='flex lg:items-center gap-[13px] lg:gap-[33px] mt-[15px] lg:mt-[49px]'>
+                        <div className='font-bold text-black text-[13px] lg:text-[40px] font-adamina'>
                             <CountUp
                             className="account-balance"
                             start={0}
@@ -26,10 +26,10 @@ export const Banner = () => {
                             useEasing={true}
                             separator=","
                             />+
-                            <p className='font-adamina text-[16px] text-[#00000075] font-normal'>International Brands</p>
+                            <p className='font-adamina text-[10px] lg:text-[16px] text-[#00000075] font-normal'>International Brands</p>
                         </div>
-                        <div className='h-[75px] w-[1px] bg-[#00000021]'></div>
-                        <div className='font-bold text-black text-[40px] font-adamina'>
+                        <div className='lg:h-[75px] h-[53px] w-[1px] bg-[#00000021]'></div>
+                        <div className='font-bold text-black text-[13px] lg:text-[40px] font-adamina'>
                             <CountUp
                             className="account-balance"
                             start={0}
@@ -38,10 +38,10 @@ export const Banner = () => {
                             useEasing={true}
                             separator=","
                             />+
-                            <p  className='font-adamina text-[16px] text-[#00000075] font-normal'>High-Quality Products</p>
+                            <p  className='font-adamina text-[10px] lg:text-[16px] text-[#00000075] font-normal'>High-Quality Products</p>
                         </div>
-                        <div className='h-[75px] w-[1px] bg-[#00000021]'></div>
-                        <div className='font-bold text-black text-[40px] font-adamina'>
+                        <div className='lg:h-[75px] h-[53px] w-[1px] bg-[#00000021]'></div>
+                        <div className='font-bold text-black text-[13px] lg:text-[40px] font-adamina'>
                             <CountUp
                             className="account-balance"
                             start={0}
@@ -50,7 +50,7 @@ export const Banner = () => {
                             useEasing={true}
                             separator=","
                             />+
-                            <p  className='font-adamina text-[16px] text-[#00000075] font-normal'>Happy Customers</p>
+                            <p  className='font-adamina text-[10px] lg:text-[16px] text-[#00000075] font-normal'>Happy Customers</p>
                         </div>
                     </div>
                 </div>
