@@ -35,7 +35,7 @@ export const FooterNav = () => {
                     <Link className='font-adamina font-normal text-[11px] lg:text-[16px] text-[#00000098] mb-[7px]'>Career</Link>
                 </div>
                 {/* ---------- col 2 ------------ */}
-                <div className='flex flex-col'>
+                <div className='flex flex-col max-sm:ml-[35px]'>
                     <h2 className='font-adamina font-medium text-[13px] lg:text-[16px] text-black mb-[9px] lg:mb-[25px]'>Help</h2>
                     <Link className='font-adamina font-normal text-[11px] lg:text-[16px] text-[#00000098] mb-[7px]'>Customer Support</Link>
                     <Link className='font-adamina font-normal text-[11px] lg:text-[16px] text-[#00000098] mb-[7px]'>Delivery Details  </Link>
@@ -65,11 +65,11 @@ export const FooterNav = () => {
             <div className='row flex justify-between'>
                 <h2 className='font-adamina font-normal lg:text-[15px] text-[10px] text-[#00000070]'>Shop.co © 2000-2023, All Rights Reserved</h2>
                 <div className='flex lg:gap-[13px] gap-[5px] max-sm:flex-wrap'>
-                    <Link className='max-sm:w-[30px]'><img src={badge1} alt="badge" /></Link>
-                    <Link className='max-sm:w-[30px]'><img src={badge2} alt="badge" /></Link>
-                    <Link className='max-sm:w-[30px]'><img src={badge3} alt="badge" /></Link>
-                    <Link className='max-sm:w-[30px]'><img src={badge4} alt="badge" /></Link>
-                    <Link className='max-sm:w-[30px]'><img src={badge5} alt="badge" /></Link>
+                    <Link className='max-sm:w-[40px]'><img src={badge1} alt="badge" /></Link>
+                    <Link className='max-sm:w-[40px]'><img src={badge2} alt="badge" /></Link>
+                    <Link className='max-sm:w-[40px]'><img src={badge3} alt="badge" /></Link>
+                    <Link className='max-sm:w-[40px]'><img src={badge4} alt="badge" /></Link>
+                    <Link className='max-sm:w-[40px]'><img src={badge5} alt="badge" /></Link>
                 </div>
             </div>
         </div>

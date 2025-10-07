@@ -12,12 +12,12 @@ export const Banner = () => {
         <div className='container'>
             <div className='row'>
                 <div>
-                    <h1 className='font-adamina font-normal w-full text-[15px] lg:text-[64px] text-black lg:w-[577px] mb-[10px] lg:mb-[23px]'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
-                    <p className='font-akatab text-[11px] lg:text-[17px] text-[#00000070] font-normal w-full lg:w-[545px]'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+                    <h1 className='font-adamina font-normal w-[75%] text-[17px] lg:text-[64px] text-black lg:w-[577px] mb-[10px] lg:mb-[23px]'>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+                    <p className='font-akatab text-[11px] lg:text-[17px] text-[#00000070] font-normal w-[75%] lg:w-[545px]'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
                     <Link className='lg:py-[15px] py-[8px] px-[16px] lg:px-[67px] bg-black mt-[11px] lg:mt-[21px] font-medium font-adamina lg:text-[16px] text-[10px] text-white inline-block rounded-[63px]'>Shop Now</Link>
                     {/* --------- counter up ----------- */}
-                    <div className='flex lg:items-center gap-[13px] lg:gap-[33px] mt-[15px] lg:mt-[49px]'>
-                        <div className='font-bold text-black text-[13px] lg:text-[40px] font-adamina'>
+                    <div className='flex lg:items-center max-sm:flex-wrap gap-[15px] lg:gap-[33px] mt-[15px] lg:mt-[49px]'>
+                        <div className='font-bold max-sm:text-center text-black text-[13px] lg:text-[40px] font-adamina'>
                             <CountUp
                             className="account-balance"
                             start={0}
@@ -29,7 +29,7 @@ export const Banner = () => {
                             <p className='font-adamina text-[10px] lg:text-[16px] text-[#00000075] font-normal'>International Brands</p>
                         </div>
                         <div className='lg:h-[75px] h-[53px] w-[1px] bg-[#00000021]'></div>
-                        <div className='font-bold text-black text-[13px] lg:text-[40px] font-adamina'>
+                        <div className='font-bold max-sm:text-center text-black text-[13px] lg:text-[40px] font-adamina'>
                             <CountUp
                             className="account-balance"
                             start={0}
@@ -41,7 +41,7 @@ export const Banner = () => {
                             <p  className='font-adamina text-[10px] lg:text-[16px] text-[#00000075] font-normal'>High-Quality Products</p>
                         </div>
                         <div className='lg:h-[75px] h-[53px] w-[1px] bg-[#00000021]'></div>
-                        <div className='font-bold text-black text-[13px] lg:text-[40px] font-adamina'>
+                        <div className='font-bold max-sm:text-center max-sm:ml-[70px] text-black text-[13px] lg:text-[40px] font-adamina'>
                             <CountUp
                             className="account-balance"
                             start={0}

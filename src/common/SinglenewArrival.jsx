@@ -5,7 +5,7 @@ export const SinglenewArrival = ({proimg,proname,proprice,prodis,prorate}) => {
     <>
     <div className='container'>
         <div className='lg:w-[295px] w-fit'>
-            <div className='lg:w-[295px] w-fit lg:h-[298px] h-[190px] bg-[#F0EEED] rounded-[20px]'>
+            <div className='lg:w-[295px] w-fit h-[298px] bg-[#F0EEED] rounded-[20px]'>
                 <img src={proimg} alt="product image" />
             </div>
             <h2 className='font-adamina font-bold lg:text-[20px] text-[13px] text-black mt-[16px] mb-[8px]'>{proname}</h2>

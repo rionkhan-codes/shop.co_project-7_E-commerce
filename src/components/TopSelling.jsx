@@ -16,12 +16,12 @@ export const TopSelling = () => {
             {/* ----------- row 2 -------- */}
             <div className='row lg:mt-[55px] mt-[15px]'>
               <div>
-                <SingleTopsell proimg={'/src/assets/images/product.png'} prodis={'$232'} proname={'LOOSE FIT BERMUDA SHORTS'} proprice={'$80'} />
+                <SingleTopsell proimg={product} prodis={'$232'} proname={'LOOSE FIT BERMUDA SHORTS'} proprice={'$80'} />
               </div>
             </div>
             {/* ---------  row 3 button ---------- */}
             <div className='flex justify-center'>
-              <Link className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[15px] lg:mt-[37px]'>View All</Link>
+              <Link className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
             </div>
         </div>
     </section>
