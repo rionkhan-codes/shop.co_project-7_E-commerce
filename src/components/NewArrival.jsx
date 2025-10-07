@@ -23,7 +23,7 @@ export const NewArrival = () => {
             </div>
             {/* --------- row 3 button -------- */}
             <div className='flex justify-center'>
-                <Link className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
+                <Link to={'/productDetails'} className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
             </div>
 
             {/* --- border --------- */}
