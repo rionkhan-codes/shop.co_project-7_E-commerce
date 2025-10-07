@@ -10,33 +10,33 @@ export const ProductDetail2 = () => {
 
   return (
     <>
-    <div className='container pt-[80px]'>
+    <div className='container pt-[50px] lg:pt-[80px]'>
         <div className='row'>
             {/* --------- row 1 ----------- */}
             <div className='flex justify-around'>
                 <button
                     onClick={()=> setactive('details')}
-                    className={`font-normal font-adamina text-[20px] text-[#00000070] cursor-pointer ${
+                    className={`font-normal font-adamina text-[13px] lg:text-[20px] text-[#00000070] cursor-pointer ${
                     active === 'details'
                     ? 'border-b-2 text-black border-black'
                     : 'text-gray-500'
                     }`}>Product Details</button>
                 <button 
                     onClick={()=> setactive('reviews')}
-                    className={`font-normal font-adamina text-[20px] text-[#00000070] cursor-pointer ${
+                    className={`font-normal font-adamina text-[13px] lg:text-[20px] text-[#00000070] cursor-pointer ${
                     active === 'reviews'
                     ? 'border-b-2 text-black border-black'
                     : 'text-gray-500'
                     }`}>Rating & Reviews</button>
                 <button onClick={()=> setactive('faq')}
-                    className={`font-normal font-adamina text-[20px] text-[#00000070] cursor-pointer ${
+                    className={`font-normal font-adamina text-[13px] lg:text-[20px] text-[#00000070] cursor-pointer ${
                     active === 'faq'
                     ? 'border-b-2 text-black border-black'
                     : 'text-gray-500'
                     }`}>FAQs</button>
             </div>
             {/* ---------- border --------- */}
-            <div className='w-full border border-[#0000001c] mb-[33px]'></div>
+            <div className='w-full border border-[#0000001c] mb-[15px] lg:mb-[33px]'></div>
             {/* ----------- row 2 ------------ */}
             <div className='col'>
                 {/* ---------- details -------------- */}
@@ -47,20 +47,20 @@ export const ProductDetail2 = () => {
                 // ---------- products details ----------
                 <div>
                     <div>
-                        <h2 className='font-adamina font-semibold text-[31px] text-black'>Black Automatic Watch</h2>
-                        <p className='font-adamina font-normal text-[16px] text-[#4B5563] mt-[16px] w-[735px] mb-[60px]'>The St. Louis Meramec Canoe Company was founded by Alfred Wickett in 1922. Wickett had previously worked for the Old Town Canoe Co from 1900 to 1914. Manufacturing of the classic wooden canoes in Valley Park, Missouri ceased in 1978.</p>
+                        <h2 className='font-adamina font-semibold text-[19px] lg:text-[31px] text-black'>Black Automatic Watch</h2>
+                        <p className='font-adamina font-normal lg:text-[16px] text-[13px] text-[#4B5563] mt-[11px] lg:mt-[16px] lg:w-[735px] w-fit mb-[21px] lg:mb-[60px]'>The St. Louis Meramec Canoe Company was founded by Alfred Wickett in 1922. Wickett had previously worked for the Old Town Canoe Co from 1900 to 1914. Manufacturing of the classic wooden canoes in Valley Park, Missouri ceased in 1978.</p>
                     </div>
                     <div>
-                        <h2 className='font-adamina font-semibold text-[23px] text-black mb-[5px]'>Fabric + Care</h2>
-                        <p className='font-adamina font-normal text-[16px] text-[#4B5563]'>Material: Soft wool blend</p>
-                        <p className='font-adamina font-normal text-[16px] text-[#4B5563] mb-[60px]'>Color: Various</p>
+                        <h2 className='font-adamina font-semibold text-[19px] lg:text-[23px] text-black mb-[5px]'>Fabric + Care</h2>
+                        <p className='font-adamina font-normal lg:text-[16px] text-[13px] text-[#4B5563]'>Material: Soft wool blend</p>
+                        <p className='font-adamina font-normal lg:text-[16px] text-[13px] text-[#4B5563] mb-[21px] lg:mb-[60px]'>Color: Various</p>
 
                     </div>
                     <div>
-                        <h2 className='font-adamina font-semibold text-[23px] text-black mb-[5px]'>Sale performance</h2>
-                        <p className='font-adamina font-normal text-[16px] text-[#4B5563]'>Sales: 0</p>
-                        <p className='font-adamina font-normal text-[16px] text-[#4B5563]'>Review Count: -</p>
-                        <p className='font-adamina font-normal text-[16px] text-[#4B5563]'>Review Average: -</p>
+                        <h2 className='font-adamina font-semibold text-[19px] lg:text-[23px] text-black mb-[5px]'>Sale performance</h2>
+                        <p className='font-adamina font-normal lg:text-[16px] text-[13px] text-[#4B5563]'>Sales: 0</p>
+                        <p className='font-adamina font-normal lg:text-[16px] text-[13px] text-[#4B5563]'>Review Count: -</p>
+                        <p className='font-adamina font-normal lg:text-[16px] text-[13px] text-[#4B5563]'>Review Average: -</p>
                     </div>
                 </div>
                         )
