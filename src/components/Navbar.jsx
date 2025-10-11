@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import { CiSearch } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { Cart } from './Cart';
 
 
 export const Navbar = () => {
@@ -39,6 +40,7 @@ export const Navbar = () => {
             </div>
         </div>
     </nav>
+    <Cart/>
     </>
   )
 }
