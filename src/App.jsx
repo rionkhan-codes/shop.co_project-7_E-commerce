@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 import { About } from './pages/About'
 import { ProductDetail } from './pages/ProductDetail'
 import { AddToCart } from './pages/AddToCart'
+import { Category } from './pages/Category'
 
 function App() {
 const myRoute = createBrowserRouter(createRoutesFromElements(
@@ -14,6 +15,7 @@ const myRoute = createBrowserRouter(createRoutesFromElements(
     <Route index element = {<Home/>}/>
     <Route path='/productDetails' element ={<ProductDetail/>}/>
     <Route path='/addCart' element={<AddToCart/>}/>
+    <Route path='/category' element={<Category/>}/>
     <Route path='/about' element = {<About/>}/>
     </Route>
   </Route>
