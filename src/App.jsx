@@ -15,7 +15,7 @@ const myRoute = createBrowserRouter(createRoutesFromElements(
   <Route>
     <Route path='/' element ={<LayoutOne/>}>
     <Route index element = {<Home/>}/>
-    <Route path='/productDetails' element ={<ProductDetail/>}/>
+    <Route path='/productDetails/:productID' element ={<ProductDetail/>}/>
     <Route path='/addCart' element={<AddToCart/>}/>
     <Route path='/category' element={<Category/>}/>
     </Route>

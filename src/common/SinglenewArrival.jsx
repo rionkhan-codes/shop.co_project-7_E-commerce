@@ -1,10 +1,10 @@
 import React from 'react'
 import { FaStar } from "react-icons/fa";
 
-export const SinglenewArrival = ({proimg,proname,proprice,prodis,prorate}) => {
+export const SinglenewArrival = ({proimg,proname,proprice,prodis,prorate,showDetails}) => {
   return (
     <>
-    <div className='container'>
+    <div onClick={showDetails} className='container'>
         <div className='lg:w-[295px] w-fit'>
             <div className='lg:w-[295px] w-fit h-[298px] bg-[#F0EEED] rounded-[20px] overflow-hidden'>
                 <img src={proimg} alt="product image" />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CommonHead } from '../common/CommonHead'
 import { SinglenewArrival } from '../common/SinglenewArrival'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import product from '../assets/images/product.png'
 import axios from 'axios'
 import Slider from "react-slick";
@@ -29,6 +29,14 @@ export const NewArrival = () => {
   };
 
 
+//   --------- navigate  ----------
+ 
+const navigate = useNavigate()
+
+let handleShow = (productData)=>{
+    navigate(`/productDetails/${productData}`)
+    
+}
 
   return (
     <>
@@ -47,7 +55,7 @@ export const NewArrival = () => {
                     {
                         product.slice(0,4).map((item , i)=>(
                             <div className='w-[295px]' key={i}>
-                                <SinglenewArrival key={i} proname={item.title} proimg={item.images[0]} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
+                                <SinglenewArrival showDetails={()=>handleShow(item.id)} key={i} proname={item.title} proimg={item.images[0]} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
                             </div>
                            
                         ))

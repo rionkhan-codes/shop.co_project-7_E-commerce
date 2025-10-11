@@ -1,8 +1,20 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { BiCheck } from 'react-icons/bi';
-import { NavLink } from 'react-router'
+import { NavLink, useParams } from 'react-router'
 
 export const ProductDetail1 = () => {
+     // ---------- usestate ---------
+    const [product , setproduct] = useState([])
+const params = useParams()
+
+    // -------- use effect ---------------
+    useEffect(()=>{
+        axios.get(`https://dummyjson.com/products/category/smartphones/${params.productID}`)
+        .then((res)=>setproduct(res.data.products))
+        .catch((err)=>console.log(err))
+    },[])
+    console.log(product)
     // --------- color ---------
  const colors = [
   { id: 1, value: "#4b4434" }, // brown

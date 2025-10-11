@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/images/SHOP.CO.png'
 import { Link } from 'react-router'
 import { CiSearch } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Cart } from './Cart';
-
-
+import { RxCross1 } from "react-icons/rx";
 export const Navbar = () => {
+    const [cart,setcart] = useState(false)
+    let handleclose = ()=>[
+        setcart(!cart)
+    ]
+    
+    
   return (
     <>
     <nav id='mainNav' className='py-[25px] border-b border-[#0000001f] hidden lg:block'>
@@ -34,13 +39,18 @@ export const Navbar = () => {
 
                 {/* ------- buttons --------- */}
                 <div className='flex items-center gap-[14px]'>
-                    <button><FiShoppingCart className='text-[25px] text-[#000]'/></button>
+                    <button onClick={()=>setcart(!cart)}><FiShoppingCart className='text-[25px] text-[#000]'/></button>
                     <Link to={'/login'}><FaRegUserCircle className='text-[25px] text-[#000]'/></Link>
                 </div>
             </div>
         </div>
     </nav>
-    <Cart/>
+    {/* ------------ cart ------------- */}
+    {
+        cart&&
+        <Cart closeCart={handleclose} cross={<RxCross1 onClick={()=>setcart(!cart)}/>}/>
+    
+    }
     </>
   )
 }
