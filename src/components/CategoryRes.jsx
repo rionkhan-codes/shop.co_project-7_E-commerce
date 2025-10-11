@@ -3,7 +3,7 @@ import React from 'react'
 export const CategoryRes = () => {
   return (
     <>
-    <section className='lg:pt-[50px] pt-[30px] max-sm:block lg:hidden'>
+    <section className='lg:pt-[50px] pt-[30px]  lg:hidden'>
         <div className='container'>
             <div className='lg:w-[200px] w-[137px]'>
                 {/* ------------ col ------------ */}

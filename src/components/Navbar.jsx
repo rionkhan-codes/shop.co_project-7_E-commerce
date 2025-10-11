@@ -34,7 +34,7 @@ export const Navbar = () => {
                 {/* ------- buttons --------- */}
                 <div className='flex items-center gap-[14px]'>
                     <button><FiShoppingCart className='text-[25px] text-[#000]'/></button>
-                    <Link><FaRegUserCircle className='text-[25px] text-[#000]'/></Link>
+                    <Link to={'/login'}><FaRegUserCircle className='text-[25px] text-[#000]'/></Link>
                 </div>
             </div>
         </div>
