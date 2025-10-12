@@ -5,13 +5,13 @@ import { NavLink, useParams } from 'react-router'
 
 export const ProductDetail1 = () => {
      // ---------- usestate ---------
-    const [product , setproduct] = useState([])
+const [product , setproduct] = useState([])
 const params = useParams()
 
     // -------- use effect ---------------
     useEffect(()=>{
-        axios.get(`https://dummyjson.com/products/category/smartphones/${params.productID}`)
-        .then((res)=>setproduct(res.data.products))
+        axios.get(`https://dummyjson.com/products/${params.productID}`)
+        .then((res)=>setproduct(res.data))
         .catch((err)=>console.log(err))
     },[])
     console.log(product)
@@ -22,7 +22,7 @@ const params = useParams()
   { id: 3, value: "#2c2f4a" }, // navy blue
 ];
 // ----------- size ---------
-const sizes = ["Small", "Medium", "Large", "X-Large"];
+const sizes = ["China", "USA", "UK", "Korea"];
 
 const [selectedColor, setSelectedColor] = useState(1);
   const [selectedSize, setSelectedSize] = useState("Large");
@@ -34,22 +34,22 @@ const [selectedColor, setSelectedColor] = useState(1);
             <div className='row flex justify-between'>
                 {/* --------- slider ---------- */}
                 <div className=' hidden  lg:block'>
-                    <div className='mb-[17px]'><img src="/src/assets/images/image 2.png" alt="product" /></div>
-                    <div className='mb-[17px]'><img src="/src/assets/images/image 5.png" alt="product" /></div>
-                    <div className='mb-[17px]'><img src="/src/assets/images/image 6.png" alt="product" /></div>
+                    <div className='mb-[17px] w-[170px] h-[170px]'><img src={product?.images?.[0]} alt="product" /></div>
+                    <div className='mb-[17px] w-[170px] h-[170px]'><img src={product?.images?.[1]} alt="product" /></div>
+                    <div className='mb-[17px] w-[170px] h-[170px]'><img src={product?.images?.[2]} alt="product" /></div>
                 </div>
                 {/* ---------- big product ----------- */}
                 <div className=' hidden lg:block'>
-                    <img src="/src/assets/images/image 1.png" alt="product" />
+                    <img src={product.thumbnail} alt="product" />
                 </div>
                 {/* ----------- cart ---------- */}
                 <div>
-                    <h2 className='font-bold font-adamina text-[21px]  lg:text-[40px] text-black'>One Life Graphic T-shirt</h2>
+                    <h2 className='font-bold font-adamina text-[21px]  lg:text-[40px] text-black'>{product.title}</h2>
                     <div className='flex lg:gap-[33px] lg:mt-[15px] mt-[11px] gap-[15px]'>
-                        <h2 className='font-bold font-adamina text-[17px] lg:text-[33px] text-[#000]'>$260</h2>
-                        <h2 className='font-bold font-adamina text-[17px] lg:text-[33px] text-[#00000032] line-through'>$300</h2>
+                        <h2 className='font-bold font-adamina text-[17px] lg:text-[33px] text-[#000]'>{product.price}</h2>
+                        <h2 className='font-bold font-adamina text-[17px] lg:text-[33px] text-[#00000032] line-through'>{product.discountPercentage}%</h2>
                     </div>
-                    <p className='font-adamina font-normal lg:text-[16px] text-[13px] lg:w-[590px] w-fit mt-[20px] text-[#00000060]'>This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
+                    <p className='font-adamina font-normal lg:text-[16px] text-[13px] lg:w-[590px] w-fit mt-[20px] text-[#00000060]'>{product.description}</p>
                     {/* ------- border ------------- */}
                     <div className='border mt-[25px] border-[#00000020] lg:w-[590px] w-full'></div>
                         {/* ---------- choose colors ------------- */}
@@ -72,7 +72,7 @@ const [selectedColor, setSelectedColor] = useState(1);
 
                     {/* ---------- choose size --------------- */}
                     <div className='mb-[25px]'>
-                            <h3 className="lg:text-[16px] text-[15px] font-normal font-adamina text-gray-600 my-[15px] lg:mb-[16px] lg:mt-[25px]">Choose Size</h3>
+                            <h3 className="lg:text-[16px] text-[15px] font-normal font-adamina text-gray-600 my-[15px] lg:mb-[16px] lg:mt-[25px]">Choose Variant</h3>
                         <div className="flex space-x-3">
                             {sizes.map((size) => (
                         <button
