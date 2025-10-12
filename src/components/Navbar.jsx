@@ -11,7 +11,7 @@ export const Navbar = () => {
     let handleclose = ()=>[
         setcart(!cart)
     ]
-    
+    const localData = JSON.parse(localStorage.getItem('productID'))
     
   return (
     <>
@@ -39,7 +39,7 @@ export const Navbar = () => {
 
                 {/* ------- buttons --------- */}
                 <div className='flex items-center gap-[14px]'>
-                    <button onClick={()=>setcart(!cart)}><FiShoppingCart className='text-[25px] text-[#000]'/></button>
+                    <button onClick={()=>setcart(!cart)} className='relative'><FiShoppingCart className='text-[25px] text-[#000] '/><span className='w-[20px] h-[20px] bg-sky-500 rounded-full flex justify-center items-center text-white absolute top-[-9px] right-[-9px]'>{localData.length}</span></button>
                     <Link to={'/login'}><FaRegUserCircle className='text-[25px] text-[#000]'/></Link>
                 </div>
             </div>

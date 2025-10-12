@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { RxCross1 } from "react-icons/rx";
+import axios from 'axios';
+import { MdDeleteOutline } from "react-icons/md";
 
 export const Cart = ({closeCart,cross}) => {
+
+  const [product, setProduct] = useState([]);
+  const localIds = JSON.parse(localStorage.getItem("productID")) || [];
+
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products/category/smartphones")
+      .then((res) => setProduct(res.data.products))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const cartProduct = product.filter((item) => localIds.includes(item.id));
+
+    // ✅ Delete from cart
+  const handleDelete = (id) => {
+    const existIds = JSON.parse(localStorage.getItem("productID")) || [];
+    const updated = existIds.filter((itemId) => itemId !== id);
+    localStorage.setItem("productID", JSON.stringify(updated));
+    alert("Removed from cart!");
+    window.location.reload();
+  };
+
     
   return (
     <>
@@ -17,15 +41,25 @@ export const Cart = ({closeCart,cross}) => {
             {/* ------------ all product ---------- */}
             <div className='h-[700px] overflow-y-scroll mt-[15px]'>
                 {/* ------------ single product ------------ */}
-                <div className='mt-[13px] flex justify-between  items-center mb-[25px]'>
-                    <div className='flex items-center gap-[13px]'>
+                {
+                    cartProduct.map((item , i)=>(
+                    <div>
+
+                        <div key={i} className='mt-[13px] flex justify-between  items-center mb-[11px]'>
+                       <div className='flex items-center gap-[13px]'>
                         <div className='w-[60px] h-[60px] bg-black rounded-[15px]'>
-                            <img src="erg" alt="product" />
+                            <img src={item.thumbnail} alt="product" />
                         </div>
-                        <h2 className='font-adamina font-medium text-[21px] text-black'>Product Name</h2>
+                        <h2 className='font-adamina font-medium text-[21px] text-black'>{item.title}</h2>
+                      </div>
+                      <h2 className='font-adamina font-medium text-[21px] text-black'>{item.price}$</h2>
+                         </div>
+                         <div className='flex justify-end'>
+                            <button onClick={()=>handleDelete(item.id)} className='w-[30px] h-[30px] bg-red-500 rounded-full flex justify-center items-center'><MdDeleteOutline className='text-[19px]' /></button>
+                         </div>
                     </div>
-                    <h2 className='font-adamina font-medium text-[21px] text-black'>50$</h2>
-                </div>
+                    ))
+                }
             </div>
             {/* ---------- total ---------- */}
             <div className='flex justify-between mt-[25px]'>

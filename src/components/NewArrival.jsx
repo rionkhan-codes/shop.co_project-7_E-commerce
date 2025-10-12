@@ -4,20 +4,34 @@ import { SinglenewArrival } from '../common/SinglenewArrival'
 import { Link, useNavigate } from 'react-router'
 import axios from 'axios'
 import Slider from "react-slick";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 export const NewArrival = () => {
-    // ---------- usestate ---------
-    const [product , setproduct] = useState([])
+  const [product, setProduct] = useState([]);
 
 
-    // -------- use effect ---------------
-    useEffect(()=>{
-        axios.get('https://dummyjson.com/products/category/smartphones')
-        .then((res)=>setproduct(res.data.products))
-        .catch((err)=>console.log(err))
-    },[])
+  // ✅ product load
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products/category/smartphones")
+      .then((res) => setProduct(res.data.products))
+      .catch((err) => console.log(err));
+  }, []);
+
+  // ✅ Add to Cart function
+  const handleCart = (id) => {
+    const existIds = JSON.parse(localStorage.getItem("productID")) || [];
+    if (!existIds.includes(id)) {
+      existIds.push(id);
+      localStorage.setItem("productID", JSON.stringify(existIds));
+      toast.success("Added To Cart")
+    } else {
+      toast.info("Already Added")
+    }
+  };
 
    const settings = {
     dots: true,
@@ -37,6 +51,8 @@ let handleShow = (productData)=>{
     
 }
 
+
+
   return (
     <>
     <section id='newArrival' className='pt-[15px] lg:pt-[73px] py-[15px] lg:py-[65px] hidden lg:block'>
@@ -54,7 +70,7 @@ let handleShow = (productData)=>{
                     {
                         product.slice(0,4).map((item , i)=>(
                             <div className='w-[295px]' key={i}>
-                                <SinglenewArrival showDetails={()=>handleShow(item.id)} key={i} proname={item.title} proimg={item.thumbnail} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
+                                <SinglenewArrival clickCart={()=>handleCart(item.id)} showDetails={()=>handleShow(item.id)} key={i} proname={item.title} proimg={item.thumbnail} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
                             </div>
                            
                         ))
@@ -68,6 +84,15 @@ let handleShow = (productData)=>{
 
             {/* --- border --------- */}
             <div className='border  w-full border-[#00000030] lg:mt-[64px] mt-[21px]'></div>
+            <ToastContainer
+  position="top-right"
+  autoClose={2000}
+  hideProgressBar={false}
+  newestOnTop={true}
+  closeOnClick
+  pauseOnHover
+  draggable
+/>
         </div>
     </section>
 
