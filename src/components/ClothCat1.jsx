@@ -1,14 +1,11 @@
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { SingleTopsell } from '../common/SingleTopsell'
-import Pagination from '../pages/Pagination'
+import { SingleClothCat } from '../common/SingleClothCat';
+import Pagination from '../pages/Pagination';
+const ClothCat1 = () => {
 
-
-
-
-export const Category2 = () => {
-
-    // ---------- usestate ---------
+        // ---------- usestate ---------
     const [product , setproduct] = useState([])
     // --------- pagination -------
     const [page, setPage] = useState(1);
@@ -16,10 +13,11 @@ export const Category2 = () => {
 
     // -------- use effect ---------------
     useEffect(()=>{
-        axios.get('https://dummyjson.com/products/category/smartphones')
-        .then((res)=>setproduct(res.data.products))
+        axios.get('https://api.escuelajs.co/api/v1/products')
+        .then((res)=>setproduct(res.data))
         .catch((err)=>console.log(err))
     },[])
+    console.log(product)
     // ----------- pagination ---------
     const start = (page - 1) * itemsPerPage;
   const currentItems = product.slice(start, start + itemsPerPage);
@@ -27,13 +25,13 @@ export const Category2 = () => {
 
   return (
     <>
-    <div className='container hidden lg:block'>
-        <div className='row mt-[40px]'>
-            <div className=' flex justify-between gap-[30px] flex-wrap'>
+     <div className='container py-[80px]'>
+        <div className='row '>
+            <div className=' flex justify-center gap-[30px] flex-wrap'>
                 {
                     currentItems.map((item , i)=>(
                      <div className='w-[295px]' key={i}>
-                        <SingleTopsell key={i} proname={item.title} proimg={item.images[0]} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
+                        <SingleClothCat key={i} proname={item.title} proimg={item.images[0]} proprice={item.price} prodis={item.discountPercentage}/>
                     </div>
                 ))}
             </div>
@@ -45,3 +43,5 @@ export const Category2 = () => {
     </>
   )
 }
+
+export default ClothCat1

@@ -9,6 +9,7 @@ import { AddToCart } from './pages/AddToCart'
 import { Category } from './pages/Category'
 import { Register } from './pages/Register'
 import { Login } from './pages/Login'
+import { ClothCategory } from './pages/ClothCategory'
 
 function App() {
 const myRoute = createBrowserRouter(createRoutesFromElements(
@@ -18,6 +19,7 @@ const myRoute = createBrowserRouter(createRoutesFromElements(
     <Route path='/productDetails/:productID' element ={<ProductDetail/>}/>
     <Route path='/addCart' element={<AddToCart/>}/>
     <Route path='/category' element={<Category/>}/>
+    <Route path='/clothCategory' element={<ClothCategory/>}/>
     </Route>
     <Route path='/register' element={<Register/>}/>
     <Route path='/login' element={<Login/>}/>

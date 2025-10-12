@@ -1,18 +1,16 @@
-import axios from 'axios'
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { SingleTopsell } from '../common/SingleTopsell'
-import Pagination from '../pages/Pagination'
+import Pagination from '../pages/Pagination';
+import { SingleTopsell } from '../common/SingleTopsell';
+import { SingleTopSellRes } from '../common/SingleTopSellRes';
 
+export const Category2Res = () => {
 
-
-
-export const Category2 = () => {
-
-    // ---------- usestate ---------
+        // ---------- usestate ---------
     const [product , setproduct] = useState([])
     // --------- pagination -------
     const [page, setPage] = useState(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 3;
 
     // -------- use effect ---------------
     useEffect(()=>{
@@ -25,15 +23,16 @@ export const Category2 = () => {
   const currentItems = product.slice(start, start + itemsPerPage);
   const totalPages = Math.ceil(product.length / itemsPerPage);
 
+
   return (
     <>
-    <div className='container hidden lg:block'>
-        <div className='row mt-[40px]'>
-            <div className=' flex justify-between gap-[30px] flex-wrap'>
+    <div className='container lg:hidden'>
+        <div className='row mt-[20px]'>
+            <div className=' flex justify-center gap-[10px]'>
                 {
                     currentItems.map((item , i)=>(
-                     <div className='w-[295px]' key={i}>
-                        <SingleTopsell key={i} proname={item.title} proimg={item.images[0]} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
+                     <div className='w-[100px] ' key={i}>
+                        <SingleTopSellRes key={i} proname={item.title} proimg={item.images[0]} proprice={item.price} prorate={item.rating} prodis={item.discountPercentage}/>
                     </div>
                 ))}
             </div>

@@ -4,12 +4,14 @@ import { BreadCrumb } from '../components/BreadCrumb'
 import { CategoryRes } from '../components/CategoryRes'
 import { Category2 } from '../components/Category2'
 import { FooterNav } from '../components/FooterNav'
+import { Category2Res } from '../components/Category2Res'
 
 export const Category = () => {
   return (
     <>
-    <BreadCrumb/>
+    <BreadCrumb end={'Smartphones'}/>
     <CategoryRes/>
+    <Category2Res/>
     <div className='container'>
       <div className='flex '>
         <Category1/>

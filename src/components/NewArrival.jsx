@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { CommonHead } from '../common/CommonHead'
 import { SinglenewArrival } from '../common/SinglenewArrival'
 import { Link, useNavigate } from 'react-router'
-import product from '../assets/images/product.png'
 import axios from 'axios'
 import Slider from "react-slick";
 
@@ -64,7 +63,7 @@ let handleShow = (productData)=>{
             </div>
             {/* --------- row 3 button -------- */}
             <div className='flex justify-center'>
-                <Link to={'/productDetails'} className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
+                <Link to={'/category'} className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
             </div>
 
             {/* --- border --------- */}
@@ -97,7 +96,7 @@ let handleShow = (productData)=>{
             </div>
             {/* --------- row 3 button -------- */}
             <div className='flex justify-center'>
-                <Link to={'/productDetails'} className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
+                <Link to={'/category'} className='main px-[80px] py-[10px] lg:py-[15px] max-sm:w-fit border border-[#00000030] rounded-[63px] font-adamina font-medium text-[13px] lg:text-[16px] text-black mt-[21px] lg:mt-[37px]'>View All</Link>
             </div>
 
             {/* --- border --------- */}

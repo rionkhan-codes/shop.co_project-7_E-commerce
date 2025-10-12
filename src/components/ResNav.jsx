@@ -28,7 +28,7 @@ console.log(nav)
                 </button>
                 <div className={`w-[85%] py-[13px] px-[13px] bg-gray-500 absolute top-[70px]  rounded-[13px] ${nav? 'left-[30px]' : 'left-[-100%]'} duration-[.4s]`}>
                   <ul className='flex flex-col gap-[13px] items-center'>
-                    <li><Link className='font-adamina font-normal text-[16px] text-white'>Shop</Link></li>
+                    <li><Link to={'/clothCategory'} className='font-adamina font-normal text-[16px] text-white'>Shop</Link></li>
                     <li><Link className='font-adamina font-normal text-[16px] text-white'>New Arrivals</Link></li>
                     <li><Link className='font-adamina font-normal text-[16px] text-white'>Brands</Link></li>
                     <li><Link className='font-adamina font-normal text-[16px] text-white'>Shop</Link></li>
