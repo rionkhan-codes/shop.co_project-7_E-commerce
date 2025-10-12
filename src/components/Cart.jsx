@@ -9,6 +9,7 @@ export const Cart = ({closeCart,cross}) => {
   const [product, setProduct] = useState([]);
   const localIds = JSON.parse(localStorage.getItem("productID")) || [];
 
+//   -------------- api -----------
   useEffect(() => {
     axios
       .get("https://dummyjson.com/products/category/smartphones")
@@ -16,9 +17,11 @@ export const Cart = ({closeCart,cross}) => {
       .catch((err) => console.log(err));
   }, []);
 
+//   ---------- cart ------------
+
   const cartProduct = product.filter((item) => localIds.includes(item.id));
 
-    // ✅ Delete from cart
+    // ---------- Delete from cart --------------
   const handleDelete = (id) => {
     const existIds = JSON.parse(localStorage.getItem("productID")) || [];
     const updated = existIds.filter((itemId) => itemId !== id);

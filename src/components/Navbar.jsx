@@ -7,11 +7,12 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { Cart } from './Cart';
 import { RxCross1 } from "react-icons/rx";
 export const Navbar = () => {
+    // ------- cart button ----------
     const [cart,setcart] = useState(false)
     let handleclose = ()=>[
         setcart(!cart)
     ]
-    const localData = JSON.parse(localStorage.getItem('productID'))
+    const localData = JSON.parse(localStorage.getItem('productID')) || []
     
   return (
     <>

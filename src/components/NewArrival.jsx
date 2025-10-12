@@ -13,7 +13,7 @@ export const NewArrival = () => {
   const [product, setProduct] = useState([]);
 
 
-  // ✅ product load
+  // --------- product load -------------
   useEffect(() => {
     axios
       .get("https://dummyjson.com/products/category/smartphones")
@@ -21,7 +21,7 @@ export const NewArrival = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // ✅ Add to Cart function
+  // ----------- Add to Cart function -------
   const handleCart = (id) => {
     const existIds = JSON.parse(localStorage.getItem("productID")) || [];
     if (!existIds.includes(id)) {

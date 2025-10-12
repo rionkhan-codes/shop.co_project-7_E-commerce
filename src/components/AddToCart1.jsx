@@ -1,12 +1,76 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import product from '../assets/images/Frame 33.png'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaTag } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { BreadCrumb } from './BreadCrumb';
+import axios from 'axios';
 
 
 export const AddToCart1 = () => {
+      const [product, setProduct] = useState([]);
+
+    //   ----------- local id ---------
+
+  const localIds = JSON.parse(localStorage.getItem("productID")) || [];
+  // --------- product load -------------
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products/category/smartphones")
+      .then((res) => {
+        const cartData = res.data.products.filter((item)=>{
+            return localIds.includes(item.id)
+        })
+        // ---------- quantity ---------
+        const withQty = cartData.map((item)=>{
+            return {...item , qty:1}
+        })
+
+        setProduct(withQty)
+
+
+
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+
+//   ---------- product ---------
+
+
+const handleAddQty =(id)=>{
+    setProduct((prev)=>(
+
+        prev.map((item)=>{
+            if(item.id != id) return item
+
+            return {...item , qty:item.qty + 1}
+        })
+
+    ))
+}
+const handlermvQty =(id)=>{
+    setProduct((prev)=>(
+
+        prev.map((item)=>{
+            if(item.id != id) return item
+            const newQty = item.qty > 1 ? item.qty - 1 : 1;
+            return {...item , qty:newQty}
+        })
+
+    ))
+}
+
+
+  const handleDelete = (id) => {
+    const existIds = JSON.parse(localStorage.getItem("productID")) || [];
+    const updated = existIds.filter((itemId) => itemId !== id);
+    localStorage.setItem("productID", JSON.stringify(updated));
+    alert("Removed from cart!");
+    window.location.reload();
+  };
+
+
   return (
     <>
     <section id='cart' className='pt-[25px] pb-[30px]'>
@@ -17,49 +81,32 @@ export const AddToCart1 = () => {
             </div>
             <div className='row flex justify-between max-sm:flex-wrap'>
                 {/* -------------- all product ---------- */}
-                <div className='border border-[#00000021] w-full lg:w-[715px] rounded-[20px] max-sm:mb-[20px]'>
+                <div className='w-full lg:w-[715px] rounded-[20px] max-sm:mb-[20px]'>
                     {/* ---------- product 1 ----------- */}
-                    <div className='flex justify-between lg:py-[20px] lg:px-[25px] py-[15px] px-[15px]'>
+                    {
+                        product.map((item)=>(
+                            <div key={item.id} className='flex justify-between lg:py-[20px] lg:px-[25px] py-[15px] px-[15px] border border-[#00000015] w-full mt-[25px]'>
                         <div className='flex gap-[17px]'>
-                            <div className='lg:w-[124px] lg:h-[124px] w-[90px] h-[90px] overflow-hidden'><img src={product} alt="product" /></div>
+                            <div className='lg:w-[124px] lg:h-[124px] w-[90px] h-[90px] overflow-hidden'><img src={item.thumbnail} alt="product" /></div>
                             <div>
-                                <h2 className='font-adamina font-bold lg:text-[20px] text-[14px] text-black mb-[4px]'>Gradient Graphic T-shirt</h2>
-                                <p className='font-adamina font-normal text-[13px] lg:text-[14px] text-black mb-[4px]'>Size: <span className='text-[#00000085]'> Large</span></p>
-                                <p className='font-adamina font-normal text-[13px] lg:text-[14px] text-black'>Color: <span className='text-[#00000085]'> White</span></p>
-                                <h2 className='font-adamina font-bold text-[17px] lg:text-[24px] text-black mt-[15px]'>$145</h2>
+                                <h2 className='font-adamina font-bold lg:text-[20px] text-[14px] text-black mb-[4px]'>{item.title}</h2>
+                                <p className='font-adamina font-normal text-[13px] lg:text-[14px] text-black mb-[4px]'>{item.brand}</p>
+                                <p className='font-adamina font-normal text-[13px] lg:text-[14px] text-black'>{item.category}</p>
+                                <h2 className='font-adamina font-bold text-[17px] lg:text-[24px] text-black mt-[15px]'>{item.price * item.qty}$</h2>
                             </div>
                         </div>
                         <div>
-                            <button className='mb-[56px] ml-[80px]'><RiDeleteBin6Line className='text-[25px] text-red-500' /></button>
+                            <button onClick={()=>handleDelete(item.id)} className='mb-[56px] ml-[80px]'><RiDeleteBin6Line className='text-[25px] text-red-500' /></button>
                             <div className='lg:py-[13px] lg:px-[20px] py-[5px] px-[13px] max-sm:w-[90px] max-sm:ml-[20px] bg-[#F0F0F0] flex gap-[15px] lg:gap-[20px] rounded-[63px] items-center'>
-                                <button className='font-adamina font-bold lg:text-[25px] text-[19px] text-black'>-</button>
-                                <h2 className='lg:text-[19px] text-[15px]'>1</h2>
-                                <button className='font-adamina font-bold lg:text-[25px] text-[19px] text-black'>+</button>
+                                <button onClick={()=>handlermvQty(item.id)} className='font-adamina font-bold lg:text-[25px] text-[19px] text-black'>-</button>
+                                <h2 className='lg:text-[19px] text-[15px]'>{item.qty}</h2>
+                                <button onClick={()=>handleAddQty(item.id)} className='font-adamina font-bold lg:text-[25px] text-[19px] text-black'>+</button>
                             </div>
                         </div>
                     </div>
+                        ))
+                    }
                     {/* ------------ border ------------- */}
-                    <div className='border border-[#00000015] w-full mt-[25px]'></div>
-                    {/* ---------- product 2 ----------- */}
-                    <div className='flex justify-between lg:py-[20px] lg:px-[25px] py-[15px] px-[15px]'>
-                        <div className='flex gap-[17px]'>
-                            <div className='lg:w-[124px] lg:h-[124px] w-[90px] h-[90px] overflow-hidden'><img src={product} alt="product" /></div>
-                            <div>
-                                <h2 className='font-adamina font-bold lg:text-[20px] text-[14px] text-black mb-[4px]'>Gradient Graphic T-shirt</h2>
-                                <p className='font-adamina font-normal text-[13px] lg:text-[14px] text-black mb-[4px]'>Size: <span className='text-[#00000085]'> Large</span></p>
-                                <p className='font-adamina font-normal text-[13px] lg:text-[14px] text-black'>Color: <span className='text-[#00000085]'> White</span></p>
-                                <h2 className='font-adamina font-bold text-[17px] lg:text-[24px] text-black mt-[15px]'>$145</h2>
-                            </div>
-                        </div>
-                        <div>
-                            <button className='mb-[56px] ml-[80px]'><RiDeleteBin6Line className='text-[25px] text-red-500' /></button>
-                            <div className='lg:py-[13px] lg:px-[20px] py-[5px] px-[13px] max-sm:w-[90px] max-sm:ml-[20px] bg-[#F0F0F0] flex gap-[15px] lg:gap-[20px] rounded-[63px] items-center'>
-                                <button className='font-adamina font-bold lg:text-[25px] text-[19px] text-black'>-</button>
-                                <h2 className='lg:text-[19px] text-[15px]'>1</h2>
-                                <button className='font-adamina font-bold lg:text-[25px] text-[19px] text-black'>+</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 {/* ------------ cart ----------- */}
@@ -68,7 +115,7 @@ export const AddToCart1 = () => {
                         <h2 className='font-bold font-adamina lg:text-[20px] text-[15px] flex justify-center text-black mb-[24px]'>Order Summary</h2>
                         <div className='flex justify-between mt-[15px] lg:mt-[20px]'>
                             <p className='font-normal font-adamina lg:text-[20px] text-[15px] text-[#00000080]'>Subtotal</p>
-                            <p className='font-adamina font-bold lg:text-[20px] text-[15px] text-black'>$565</p>
+                            <p className='font-adamina font-bold lg:text-[20px] text-[15px] text-black'></p>
                         </div>
                         <div className='flex justify-between mt-[15px] lg:mt-[20px]'>
                             <p className='font-normal font-adamina lg:text-[20px] text-[15px] text-[#00000080]'>Discount (-20%)</p>
